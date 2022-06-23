@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #display {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            user-select: none;
+        }
+
+        #display.wait {
+            background-color: aqua;
+        }
+
+        #display.ready {
+            background-color: red;
+            color: white;
+        }
+
+        #display.start {
+            background-color: greenyellow;
+            font-size: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="display" class="wait">클릭해서 시작하기</div>
+    <div id="result"></div>
+    <div id="list"></div>
+    <script src="app.js"></script>
+</body>
+</html>
