@@ -61,7 +61,7 @@ class Game {
 
     start(name) {
         $gameMenu.addEventListener('submit', this.gameMenuInput);
-        $battleMenu.addEventListener('sumit', this.battleMenuInput);
+        $battleMenu.addEventListener('submit', this.battleMenuInput);
         this.changeScreen('game');
         this.hero = new Hero(this, name);
         this.upDateHeroState();
@@ -120,6 +120,7 @@ class Game {
     gameMenuInput = (event) => {
         event.preventDefault();
         const input = event.target['menu-input'].value;
+        console.log(input === '3');
         if (input === '1') {
             this.changeScreen('battle');
             const randomNum = Math.floor(Math.random() * this.monsterList.length);
@@ -131,6 +132,12 @@ class Game {
 
         } else if (input === '3') {
             this.changeScreen('start');
+            $heroName.textContent = '';
+            $heroLevel.textContent = '';
+            $heroHp.textContent = '';
+            $heroXp.textContent = '';
+            $heroAtt.textContent = '';
+            return;
         }
     }
 
@@ -145,9 +152,11 @@ class Game {
             this.upDateHeroState();
             this.upDateMonsterState();
         } else if (input === '2') {
-
         } else if (input === '3') {
             this.changeScreen('game');
+            $monsterName.textContent = '';
+            $monsterHp.textContent = '';
+            $monsterAtt.textContent = '';
         }
     }
 }
